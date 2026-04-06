@@ -1,0 +1,1349 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ PRIMARY SEO -->
+  <title>Kalyani Mali | UI/UX Product Designer in India | Portfolio</title>
+  <link rel="icon" href="Assets/Icon/favicon.f978ef38.svg" />
+  <meta name="description"
+    content="Kalyani Mali is a UI/UX Product Designer based in India, India with 2+ years of experience in designing user-centered digital products, branding systems, and modern web interfaces. View portfolio, projects, and case studies.">
+  <meta name="keywords"
+    content="Kalyani Mali, UI UX Designer India, Product Designer India, Figma Designer India, Freelance UI UX Designer, UX Designer Portfolio, UI Designer India, LocalConnect Designer">
+  <meta name="author" content="Kalyani Mali">
+
+  <!-- ✅ CANONICAL (VERY IMPORTANT) -->
+  <link rel="canonical" href="https://kalyanimali.in/" />
+
+  <!-- ✅ OPEN GRAPH (LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:title" content="Kalyani Mali - UI/UX Product Designer Portfolio">
+  <meta property="og:description"
+    content="Explore the portfolio of Kalyani Mali, a UI/UX Product Designer specializing in user-centered design, branding, and digital product experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kalyanimali.in/">
+  <meta property="og:image" content="https://kalyanimali.in/preview.jpg">
+
+  <!-- ✅ BRAND COLOR -->
+  <meta name="theme-color" content="#14CF93" />
+
+  <!-- ✅ TWITTER SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kalyani Mali | UI/UX Designer Portfolio">
+  <meta name="twitter:description"
+    content="UI/UX Product Designer from India creating intuitive digital experiences. View projects and case studies.">
+  <meta name="twitter:image" content="https://kalyanimali.in/preview.jpg">
+  <meta name="twitter:image:alt" content="Kalyani Mali UI/UX Designer." />
+
+  <!-- ✅ CUSTOM STYLES -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="index.3df6df01.css" />
+  <link rel="stylesheet" href="index.24a51c92.css" />
+  <link rel="stylesheet" href="index.2b8c6830.css" />
+  <link rel="stylesheet" href="custom.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const reviews = [
+        // ✅ BRAND WORK
+        {
+          avatar: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png",
+          title: "Clean and Professional Branding",
+          text: "The branding for SB Properties came out really clean and professional. Everything from logo to colors feels well put together and easy to use. It's exactly what we needed to stand out in the real estate market.",
+          name: "Saurabh Patil",
+          role: "Owner, SB Properties",
+          stars: 5
+        },
+        {
+          avatar: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-2.png",
+          title: "Simple and Easy to Use Design",
+          text: "FastVPN Social design is simple and easy to understand. Even complex features feel straightforward, which really helps users. The design is clean and modern, and it works well across different devices.",
+          name: "Shefali Verma",
+          role: "Product Lead, FastVPN",
+          stars: 4
+        },
+
+        // ✅ FREELANCE CLIENTS
+        {
+          avatar: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-5.png",
+          title: "Smooth Work Experience",
+          text: "Working together was smooth. The website design was clean, responsive, and delivered on time without much back and forth. The end result was a great-looking site that helped my business get noticed online.",
+          name: "Gaurav Bhavsar",
+          role: "Co-Founder, Gaurav Agency",
+          stars: 5
+        },
+        {
+          avatar: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-4.png",
+          title: "Good UI and Better Experience",
+          text: "The UI is clean and easy to use. We saw better user engagement after the design changes, which really helped us. The design is modern and works well on both desktop and mobile, making it easier for our customers to interact with our services.",
+          name: "Neha Kulkarni",
+          role: "Founder, Tech Startup",
+          stars: 4
+        },
+
+        // ✅ PROFESSIONAL PERSON
+        {
+          avatar: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-1.png",
+          title: "Good Design Thinking",
+          text: "Kalyani understands user needs well and turns them into simple, usable designs. The work shows good clarity and attention to detail. The designs are not just visually appealing but also functional, which is a great combination.",
+          name: "Kunal Sonar",
+          role: "SDE I, Snapchat",
+          stars: 5
+        }
+      ];
+
+
+      let current = 0;
+
+      const avatarTrack = document.getElementById("avatarTrack");
+      const mainAvatar = document.getElementById("mainAvatar");
+      const reviewTitle = document.getElementById("reviewTitle");
+      const reviewText = document.getElementById("reviewText");
+      const reviewName = document.getElementById("reviewName");
+      const reviewRole = document.getElementById("reviewRole");
+      const reviewStars = document.getElementById("reviewStars");
+
+      // CREATE AVATARS
+      reviews.forEach((r, i) => {
+        const img = document.createElement("img");
+        img.src = r.avatar;
+        img.className = "t-avatar";
+        if (i === 0) img.classList.add("active");
+
+        img.addEventListener("click", () => setReview(i));
+        avatarTrack.appendChild(img);
+      });
+
+      function setReview(index) {
+        current = index;
+        const r = reviews[index];
+
+        mainAvatar.src = r.avatar;
+        reviewTitle.textContent = r.title;
+        reviewText.textContent = r.text;
+        reviewName.textContent = r.name;
+        reviewRole.innerHTML = r.role;
+
+        reviewStars.innerHTML =
+          "★".repeat(r.stars) + "☆".repeat(5 - r.stars);
+
+        const avatars = document.querySelectorAll(".t-avatar");
+
+        avatars.forEach((el, i) => {
+          el.classList.toggle("active", i === index);
+        });
+
+        // 🔥 CENTER ACTIVE AVATAR (IMPORTANT)
+        const activeAvatar = avatars[index];
+        const container = document.getElementById("avatarTrack");
+
+        const containerWidth = container.offsetWidth;
+        const avatarLeft = activeAvatar.offsetLeft;
+        const avatarWidth = activeAvatar.offsetWidth;
+
+        container.scrollTo({
+          left: avatarLeft - containerWidth / 2 + avatarWidth / 2,
+          behavior: "smooth"
+        });
+      }
+
+      document.getElementById("next").onclick = () => {
+        setReview((current + 1) % reviews.length);
+      };
+
+      document.getElementById("prev").onclick = () => {
+        setReview((current - 1 + reviews.length) % reviews.length);
+      };
+
+      // INIT
+      setReview(0);
+
+    });
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kalyani Mali",
+  "url": "https://kalyanimali.in/",
+  "image": "https://kalyanimali.in/preview.png",
+  "jobTitle": "UI/UX Product Designer",
+  "description": "UI/UX Product Designer based in India, India specializing in user-centered design, branding, and digital product experiences.",
+  "email": "mailto:malikalyani0715@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mumbai",
+    "addressCountry": "India"
+  },
+  "sameAs": [
+    "https://www.behance.net/kalyani07",
+    "https://www.linkedin.com/in/dev-kalyani/",
+    "https://github.com/kalyani0704",
+    "https://linktr.ee/dev_kalyani",
+    "https://www.crunchbase.com/person/kalyani-mali-9271",
+    "https://wellfound.com/u/kalyani-mali07",
+    "https://www.producthunt.com/@kalyanimali"
+  ],
+  "knowsAbout": [
+    "UI Design",
+    "UX Design",
+    "Product Design",
+    "Figma",
+    "Design Systems",
+    "Wireframing",
+    "Prototyping",
+    "Branding",
+    "User Experience"
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Sandip Foundation"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Institute of Management & Research, Jalgaon"
+    }
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "founder": {
+    "@type": "Organization",
+    "name": "LocalConnect",
+    "url": "https://localconnect.live",
+    "description": "AI-powered hyperlocal services platform connecting users with trusted local service providers."
+  }
+}
+</script>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="o-desktop" style="font-family: gilroy,sans-serif !important;">Kalyani
+      Mali</a>
+    <a href="playbook.html" data-router-disabled class="o-desktop">Playbook</a>
+    <img src="Assets/Regular/logoooo2.png" alt="logo" class="head-logo">
+    <div class="c-nav-social o-desktop">
+      <a href="#">Socials</a>
+      <div class="c-nav-social__dropdown">
+        <ul>
+          <li style="--order: 1">
+            <a data-router-disabled="" target="_blank" href="https://www.behance.net/kalyani07">Behance</a>
+          </li>
+          <li style="--order: 2">
+            <a data-router-disabled="" target="_blank" href="https://www.linkedin.com/in/dev-kalyani/">LinkedIn</a>
+          </li>
+          <li style="--order: 3">
+            <a data-router-disabled="" target="_blank"
+              href="https://www.crunchbase.com/person/kalyani-mali-9271">Crunchbase</a>
+          </li>
+          <li style="--order: 4">
+            <a data-router-disabled="" target="_blank" href="https://linktr.ee/dev_kalyani">Linktree</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a data-router-disabled="" target="_blank" href="mailto:malikalyani0715@gmail.com" class="o-desktop">Contact</a>
+  </nav>
+  <div class="c-loader is-loading">
+    <p class="js-split">
+      Design Portfolio<br /><span class="js-year">©2026</span>
+    </p>
+    <div class="c-loader__bg"></div>
+    <div class="c-loader__bg"></div>
+    <h2 class="is-loading js-loader-title js-split-word">
+      <span><span style="--order: 1" class="js-loader-title-child">Kalyani <div class="o-accent"
+            style="display: inline">Mali</div>
+        </span></span>
+      <span> <span style="--order: 2" class="js-loader-title-child"> is</span></span>
+      <span><span style="--order: 3" class="js-loader-title-child"> a</span></span>
+    </h2>
+    <div class="c-loading__anim"></div>
+  </div>
+  <div class="c-play__bg"></div>
+  <div class="c-home__bg"></div>
+  <main>
+    <h1 style="position:absolute; left:-9999px; top:auto;">
+      Kalyani Mali - UI/UX Product Designer in India | Founder of LocalConnect
+    </h1>
+    <section style="position:absolute; left:-9999px; top:auto;">
+      <h2>About Kalyani Mali</h2>
+      <p>
+        Kalyani Mali is a UI/UX Product Designer based in Nashik, India, with over 2 years of experience
+        in designing user-centered digital products, mobile applications, and branding systems.
+        She specializes in wireframing, prototyping, UI design systems, and creating scalable
+        digital experiences using tools like Figma and modern frontend technologies.
+      </p>
+
+      <h2>Founder of LocalConnect</h2>
+      <p>
+        Kalyani Mali is also the Founder of LocalConnect, an AI-powered hyperlocal services platform
+        that connects users with trusted local service providers. LocalConnect focuses on trust,
+        transparency, and smart service discovery using AI-driven systems.
+      </p>
+
+      <h2>Skills and Expertise</h2>
+      <p>
+        UI Design, UX Design, Product Design, Design Systems, Wireframing, Prototyping,
+        User Research, Information Architecture, Branding, Figma, Adobe XD, Frontend Development.
+      </p>
+    </section>
+    <div id="js-scroll" data-router-wrapper="">
+      <div data-router-view="home" data-transition-in="home">
+        <div class="c-cursor" id="js-cursor" style="transform: translate(100%, 100%)">
+          <div>
+            <img src="Assets/Regular/case.png" alt="" id="case" />
+          </div>
+          <div>
+            <img src="Assets/Regular/case.png" alt="" id="case" />
+          </div>
+          <div>
+            <img src="Assets/Regular/case.png" alt="" id="case" />
+          </div>
+          <div>
+            <img src="Assets/Regular/case.png" alt="" id="case" />
+            <!-- <p>Coming Soon</p> -->
+          </div>
+          <div>
+            <img src="Assets/Regular/case.png" alt="" id="case" />
+          </div>
+        </div>
+        <div data-scroll-section="" class="c-title o-section">
+          <div class="c-title__row">
+            <div>
+              <h2 class="js-hero-title">
+                <span class="line-parent"><span class="line-child">Creative</span></span>
+              </h2>
+            </div>
+            <div class="c-t-a-info c-t-a-info--desktop">
+              <p class="o-title-small">
+                <span class="line-parent"><span class="line-child">Currently Available
+                    <span class="o-accent">FOR</span></span></span>
+                <span class="line-parent"><span class="line-child">Freelance Worldwide</span></span>
+              </p>
+              <p class="o-title-small">
+                <span class="line-parent"><span class="line-child">My local Time <span
+                      class="js-time">TIME</span></span></span>
+                <span class="line-parent"><span class="line-child">GMT (+5:30)</span></span>
+              </p>
+            </div>
+          </div>
+          <div class="c-title__row">
+            <div class="c-title__svg">
+              <img class="c-down-btn o-desktop" alt="Scroll Down" src="Assets/Icon/down-arrow.040970d7.svg" />
+              <div class="c-visual-line o-mobile"></div>
+              <div class="c-visual">
+                <svg id="Visual" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewbox="0 35 870 305">
+                  <defs>
+                    <clipPath id="clip-path" transform="translate(31.09 32.56)">
+                      <path id="dot_clip"
+                        d="M250.12,82.48c1.15-15.33,9.2-33.72,13.79-44.83l-1.15-.77-30.27,10c-5.36,4.6-9.2,21.46-4.6,30.65C235.18,79.41,244.38,80.94,250.12,82.48Z"
+                        fill="none"></path>
+                    </clipPath>
+                    <clipPath id="clip-path-2" transform="translate(31.09 32.56)">
+                      <path id="l_clip"
+                        d="M794.74,18,754.13,32.57,753,29.5,829.23,0l4.6,5.75L748,285.44l39.46-17.24.77,2.3-52.88,26.44c-7.66-2.3-13.41-9.2-21.07-19.92Z"
+                        fill="none"></path>
+                    </clipPath>
+                    <clipPath id="clip-path-3" transform="translate(31.09 32.56)">
+                      <path id="i_clip"
+                        d="M207.78,123.76l-32.18,9.58-.77-2.3,66.28-21.84,4.21.77L192.45,286.22l39.46-19.92,1.15,2.3L183.25,297c-9.2-6.9-13.79-11.88-20.69-23.37Z"
+                        fill="none"></path>
+                    </clipPath>
+                    <clipPath id="clip-path-4" transform="translate(31.09 32.56)">
+                      <path id="a_clip"
+                        d="M654.51,105.36c14.56-1.92,41,7.66,54,14.18L661,277.78l38.7-16.09v3.06l-72.8,32.18c-1.92-1.53-5.37-4.6-6.13-6.9l46.36-150.58H666c-11.88,29.89-78.16,131.42-95.4,154.41-21.84-3.83-35.25-29.5-35.25-49.43C535.35,182,626.93,106.9,654.51,105.36ZM583.25,263.22c3.07-1.15,67.82-95.79,78.93-123.76l4.21-8.05c-10.35-6.13-23-11.11-36.78-9.58-18.39,0-57.09,85.44-57.09,118C572.52,252.88,575.58,262.07,583.25,263.22Z"
+                        fill="none"></path>
+                    </clipPath>
+                    <clipPath id="clip-path-5" transform="translate(31.09 32.56)">
+                      <path id="u_clip"
+                        d="M409.3,116.09l-36.4,18.39-1.53-2.3L420,106.13c9.58,3.83,16.48,10.34,22.22,19.16,0,22.22-44.45,128-44.45,141.38,0,6.51,3.06,10,10,11.49,2.68-.38,65.14-92.34,94.64-156.71l3.45-8,39.08-2.68L493.21,277l37.16-14.56.38,2.3L459.1,296.93c-1.91-1.53-5.36-4.6-6.13-6.9l54-168.57h-1.15c-29.5,66.67-87.74,173.18-113.41,175.48-19.16-8.05-28.74-12.64-28.74-30.27C363.71,243.68,408.54,128.35,409.3,116.09Z"
+                        fill="none"></path>
+                    </clipPath>
+                    <clipPath id="clip-path-6" transform="translate(31.09 32.56)">
+                      <path id="s_clip"
+                        d="M286.7,275.1c15.71,0,31.8-6.9,39.85-18,3.83-31-60.92-51.34-55.94-93.87,3.83-29.12,41.38-64.37,72-64.37,14.56,0,30.65,1.53,35.25,10.34l-7.66,24.52h-2.68c-12.64-10.34-29.12-22.61-37.93-22.61-18.39,0-29.12,9.58-38.7,20.31,0,37.17,57.47,67.43,55.56,83.91-5.36,41.76-36.78,69-78.16,78.54-13,3.07-41.38-10-41.76-24.52l20.31-17.62C255.67,265.14,273.68,273.57,286.7,275.1Z"
+                        fill="none"></path>
+                    </clipPath>
+                    <clipPath id="clip-path-7" transform="translate(31.09 32.56)">
+                      <path id="v_clip"
+                        d="M197.77,86c-16,78.5-114.7,181.76-183.67,222.16a3.33,3.33,0,0,1-3-3.43c4.57-2.67,9.15-5.72,14.1-9.15-11-5-19.43-16.76-25.15-33.15L69.35,43.72,22.86,64.3,21,59.35l80-36.58,4.57-2.29c3.43,2.29,5.33,6.1,4.57,11.81-12.56,71.64-56,176.81-73.91,248.07a5.41,5.41,0,0,0,3.43,4.95c67.45-51.06,141.75-140.61,149-213.77-11.43-15.24-30.48-31.25-46.49-29,0-3.43,25.91-30.87,28.2-30.87,13,0,33.15,12.19,33.15,38.87C203.48,60.49,201.2,71.92,197.77,86Z"
+                        fill="none"></path>
+                    </clipPath>
+                  </defs>
+                  <g id="dot">
+                    <g clip-path="url(#clip-path)">
+                      <path id="dot_path" d="M235.53,91.06s-3.65-21.72,18.78-61" transform="translate(31.09 32.56)"
+                        fill="none" stroke="#52e0ed" stroke-miterlimit="10" stroke-width="34"></path>
+                    </g>
+                  </g>
+                  <g id="l">
+                    <g clip-path="url(#clip-path-2)">
+                      <polyline id="l_path" points="820.4 302.62 755.9 334.12 843.9 39.12 784.4 63.62" fill="none"
+                        stroke="#52e0ed" stroke-miterlimit="10" stroke-width="42"></polyline>
+                    </g>
+                  </g>
+                  <g id="i">
+                    <g clip-path="url(#clip-path-3)">
+                      <polyline id="i_path" points="207.9 165.12 254.9 147.12 201.9 329.12 262.9 299.12" fill="none"
+                        stroke="#52e0ed" stroke-miterlimit="10" stroke-width="42"></polyline>
+                    </g>
+                  </g>
+                  <g id="a">
+                    <g clip-path="url(#clip-path-4)">
+                      <path id="a_path"
+                        d="M671.81,121.56l-104,173s-28-39-5-98,114.34-107,123.5-80.5c9,26-49.5,180.5-49.5,180.5l67.5-35.5"
+                        transform="translate(31.09 32.56)" fill="none" stroke="#52e0ed" stroke-miterlimit="10"
+                        stroke-width="42"></path>
+                    </g>
+                  </g>
+                  <g id="u">
+                    <g clip-path="url(#clip-path-5)">
+                      <path id="u_path" d="M371.81,132.56l64-31-68,200,34-7s80-120,109-181l15-4-55,187,60-33"
+                        transform="translate(31.09 32.56)" fill="none" stroke="#52e0ed" stroke-miterlimit="10"
+                        stroke-width="42"></path>
+                    </g>
+                  </g>
+                  <g id="s">
+                    <g clip-path="url(#clip-path-6)">
+                      <path id="s_path"
+                        d="M232.31,261.06s20.5,20.5,32.5,22.5,57-6,69-39-53-64-53-82c0,0,19.5-74.5,97.5-41.5"
+                        transform="translate(31.09 32.56)" fill="none" stroke="#52e0ed" stroke-miterlimit="10"
+                        stroke-width="42"></path>
+                    </g>
+                  </g>
+                  <g id="V">
+                    <g clip-path="url(#clip-path-7)">
+                      <path id="v_path"
+                        d="M21.31,59.06l71-32-5,26L26,246.56l-8.69,57.5s85-71,122-114c28-34,100.21-133.4,12-171"
+                        transform="translate(31.09 32.56)" fill="none" stroke="#52e0ed" stroke-miterlimit="10"
+                        stroke-width="70"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h2 class="_title-fit js-hero-title">
+                <span class="line-parent"><span class="line-child">Designer</span></span>
+              </h2>
+            </div>
+          </div>
+          <div class="c-title__row o-mobile">
+            <div class="c-t-a-info c-t-a-info--mobile">
+              <p class="o-title-small">
+                <span class="line-parent"><span class="line-child">Currently Available
+                    <span class="o-accent">FOR</span></span></span>
+                <span class="line-parent"><span class="line-child">Freelance Worldwide</span></span>
+              </p>
+              <p class="o-title-small">
+                <span class="line-parent"><span class="line-child">My local Time <span
+                      class="js-time">TIME</span></span></span>
+                <span class="line-parent"><span class="line-child">GMT (+5:30)</span></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div data-scroll-section="" class="c-about o-section">
+          <div>
+            <span class="o-mobile o-title-small">About Myself</span>
+            <p class="js-reveal js-split" data-scroll="" style="line-height: 1.1;">
+              I am Kalyani Mali, I
+              <span class="o-accent u-non" style="letter-spacing: 1.5px">Design</span>
+              &
+              <span class="o-accent u-non" style="letter-spacing: 1.5px">Develop</span>
+              functional, beautiful interfaces for web and mobile.
+            </p>
+            <div class="c-about-cta">
+              <a href="Assets/Resume/resume.pdf" target="_blank">
+                <img src="Assets/Icon/contact-icon.dee7a034.svg" alt="Message me" />
+                <p style="font-size: 16px;">Resume</p>
+              </a>
+            </div>
+          </div>
+          <div class="c-about-cards js-cards">
+            <div><img src="Assets/Card/card1.jpg" alt="User" /></div>
+            <div><img src="Assets/Card/card2.jpg" alt="Precedes" /></div>
+            <div><img src="Assets/Card/card4.png" alt="All" /></div>
+          </div>
+        </div>
+        <div data-scroll-section="" class="c-works" id="js-work">
+          <div id="js-work-bg" class="c-work-bg" style="
+                --clr1: #f5f5f5;
+                --clr2: #f5f5f5;
+                --clr3: #f5f5f5;
+                --clr4: #f5f5f5;
+              "></div>
+          <div class="c-services">
+            <svg class="o-ui-arrow" width="64" height="64" viewbox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.10162 3.10156L62.9999 62.9999" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M63 1.00001L63 63L0.999989 63" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <div>
+              <span class="o-title-small">Things I <span class="o-accent">Can</span> Help you<br />
+                with.</span>
+              <p>Web & mobile / UI & Ux / Branding / front-end Development</p>
+            </div>
+          </div>
+          <hr data-scroll="" />
+          <div class="c-works_title">
+            <div>
+              <h2 class="js-reveal o-title">
+                <span class="line-parent"><span class="line-child">Personal</span></span>
+                <span class="line-parent"><span class="line-child">Wo<span class="o-accent">r</span>ks</span></span>
+              </h2>
+              <p class="o-desktop"></p>
+            </div>
+            <svg class="o-ui-arrow" width="64" height="64" viewbox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.10162 3.10156L62.9999 62.9999" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M63 1.00001L63 63L0.999989 63" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="c-projects__wrap">
+            <div class="c-project__row">
+              <div class="c-project js-project u-width-1">
+                <a href="https://www.behance.net/gallery/245599879/Veloura-Hydrating-Toner-Branding-Project"
+                  target="_blank">
+                  <img data-scroll="" data-scroll-speed="-1" src="Assets/Project/play1.png" alt="Project: Veloura" />
+                  <div class="c-project-info">
+                    <p>YEAR: 2026</p>
+                    <p>TYPE: Product Design</p>
+                    <div class="c-project-cta">
+                      <p>Veloura <span class="o-accent">Toner</span></p>
+                      <div class="c-prj-btn js-tab-arrow">
+                        <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 9.56 9.56">
+                          <line id="line1" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <line id="line2" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <polyline id="arrow-head-1" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                          <polyline id="arrow-head-2" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="c-project js-project u-width-2">
+                <a href="https://www.behance.net/gallery/244289923/Portfolio-case-study" target="_blank">
+                  <img data-scroll="" data-scroll-speed="-1" src="Assets/Project/play2.png" alt="Project: Portfolio" />
+                  <div class="c-project-info">
+                    <p>YEAR: 2026</p>
+                    <p>TYPE: Case Study</p>
+                    <div class="c-project-cta">
+                      <p>Portfo<span class="o-accent">lio</span></p>
+                      <div class="c-prj-btn js-tab-arrow">
+                        <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 9.56 9.56">
+                          <line id="line1" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <line id="line2" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <polyline id="arrow-head-1" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                          <polyline id="arrow-head-2" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="c-project__row">
+              <div class="c-project js-project u-width-3">
+                <a href="https://www.behance.net/gallery/243697779/Parcel-Tracking-App" target="_blank">
+                  <img data-scroll="" data-scroll-speed="-1" src="Assets/Project/play3.png" alt="Project: Quikparcel" />
+                  <div class="c-project-info">
+                    <p>YEAR: 2026</p>
+                    <p>TYPE: Case Study / Mobile App UI</p>
+                    <div class="c-project-cta">
+                      <p>Quik<span class="o-accent">Parcel</span></p>
+                      <div class="c-prj-btn js-tab-arrow">
+                        <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 9.56 9.56">
+                          <line id="line1" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <line id="line2" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <polyline id="arrow-head-1" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                          <polyline id="arrow-head-2" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="c-project__row">
+              <div class="c-project js-project u-width-4">
+                <a href="https://www.behance.net/gallery/246929989/Monster-Bite" target="_blank">
+                  <img data-scroll="" data-scroll-speed="-.8" src="Assets/Project/play6.png"
+                    alt="Project: Monster Bite" />
+                  <div class="c-project-info">
+                    <p>YEAR: 2026</p>
+                    <p>TYPE: Product Design</p>
+                    <div class="c-project-cta">
+                      <p>Monster<span class="o-accent"> Bite</span></p>
+                      <div class="c-prj-btn js-tab-arrow">
+                        <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 9.56 9.56">
+                          <line id="line1" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <line id="line2" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <polyline id="arrow-head-1" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                          <polyline id="arrow-head-2" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="c-project js-project u-width-5">
+                <a href="https://www.behance.net/gallery/234574815/Virtual-Network-App" target="_blank">
+                  <img data-scroll="" data-scroll-speed="-1" src="Assets/Project/play5.png" alt="Project: FastVPN" />
+                  <div class="c-project-info">
+                    <p>YEAR: 2025</p>
+                    <p>TYPE: Mobile App UI</p>
+                    <!-- <p style="background-color: #4e4e4e;color: #f5f5f5;">TYPE: Client Work</p> -->
+                    <div class="c-project-cta">
+                      <p>Fast<span class="o-accent"> VPN</span></p>
+                      <div class="c-prj-btn js-tab-arrow">
+                        <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 9.56 9.56">
+                          <line id="line1" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <line id="line2" x1="0.27" y1="9.29" x2="9.18" y2="0.38" fill="#4e4e4e" stroke="#4e4e4e"
+                            stroke-miterlimit="10" stroke-width="0.75"></line>
+                          <polyline id="arrow-head-1" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                          <polyline id="arrow-head-2" points="5.01 0.38 9.18 0.38 9.18 4.55" fill="none"
+                            stroke="#4e4e4e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="0.75">
+                          </polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="c-archive">
+              <span class="o-title-small">WEB ARCHIVE</span>
+              <ul>
+                <img src="https://yournucleus.ca/wp-content/uploads/2022/08/Home_Header_Anim_noline.gif" alt=""
+                  class="web-image">
+                <div>
+                  <li>
+                    <a target="_blank" href="https://dribble-sign-up.vercel.app/">Dribbble</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://kalyanis-coffee.vercel.app/">Kalyani's Coffee</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://kalyani-portfolio.vercel.app/">Old Portfolio</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://karagiri.vercel.app/">Karagiri</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://myglamm-eta.vercel.app/">Myglamm</a>
+                  </li>
+                  <!-- <li><a target="_blank" href="./2020/">2020 Portfolio</a></li> -->
+              </ul>
+            </div>
+          </div>
+          <a class="button button--bestia c-play-btn o-arrow" href="playbook.html" rel="noopener noreferrer"
+            data-router-disabled>
+            <div class="button__bg"></div>
+            <span>See P<span class="o-accent">l</span>aybook</span>
+          </a>
+        </div>
+      </div>
+      <div data-scroll-section="" class="c-honors o-section">
+        <div class="c-honors__title">
+          <h2 class="js-reveal o-title">
+            <span class="line-parent"><span class="line-child">Edu<span class="o-accent">cat</span>ion</span></span>
+          </h2>
+          <style>
+            @media screen and (max-width: 768px) {
+              .c-honors__title>span {
+                margin-left: 0;
+              }
+            }
+          </style>
+          <span class="o-title-small">A showcase of my
+            <span class="o-accent" style="letter-spacing: 1px; color: #4e4e4e">academic journey,</span><br />
+            achievements, and milestones that shaped my skills and
+            expertise.</span>
+        </div>
+
+        <div class="c-honors__wrap">
+          <div>
+            <svg class="o-ui-arrow" width="64" height="64" viewbox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.10162 3.10156L62.9999 62.9999" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M63 1.00001L63 63L0.999989 63" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <div class="c-featured about-full" data-scroll data-scroll-speed="-1">
+
+              <!-- BADGE -->
+              <div class="badge">About me</div>
+
+              <!-- TITLE -->
+              <h2 class="about-title" style="line-height:1.3;">
+                Design that tells your story
+              </h2>
+
+              <!-- DESC -->
+              <p class="about-desc">
+                I help brands communicate clearly and confidently through thoughtful visuals that resonate with their
+                audience.
+              </p>
+
+              <!-- IMAGE CARD -->
+              <div class="about-card" style="margin-top:10px;">
+                <img src="Assets/Regular/self.png" alt="Me">
+
+                <div class="hire">
+                  <span class="dot"></span>
+                  Available for Hire
+                </div>
+              </div>
+
+              <!-- NAME + ICONS -->
+              <div class="about-info" style="margin-top:6px;">
+                <div>
+                  <h3 style="font-weight:600;color: #4e4e4e;">Kalyani Mali</h3>
+                  <span>UI/UX Product Designer</span>
+                </div>
+
+                <div class="icons">
+                  <a href="https://www.linkedin.com/in/dev-kalyani/" target="_blank" rel="noopener noreferrer"><i
+                      class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.behance.net/kalyani07" target="_blank" rel="noopener noreferrer"><i
+                      class="fab fa-behance-square"></i></a>
+                  <a href="https://github.com/kalyani0704" target="_blank" rel="noopener noreferrer"><i
+                      class="fab fa-github-square"></i></a>
+                </div>
+              </div>
+
+              <!-- TEXT CONTENT -->
+              <div class="about-text" style="margin-top:8px;">
+
+                <p>
+                  <strong>Design isn't just my job it's my passion.</strong>
+                  What began as a hobby evolved into a full-fledged career when I realized the real power of design.
+                </p>
+
+                <p>
+                  <strong>I focus on building interfaces that actually solve problems.</strong>
+                  Clean structure, clarity, and usability always come before aesthetics.
+                </p>
+
+                <p>
+                  <strong>Details matter.</strong>
+                  It’s the smallest refinements that elevate a product from average to exceptional.
+                </p>
+
+                <div class="signature">Kalyanimali</div>
+
+              </div>
+            </div>
+          </div>
+          <style>
+            .o-title-small {
+              font-size: 15px;
+              /* font-weight: bold; */
+            }
+
+            .c-honors__list li .o-title-small {
+              font-size: 15px;
+              /* font-weight: bold; */
+            }
+          </style>
+          <div class="c-honors__list">
+            <ul>
+              <li>
+                <div>
+                  <span class="o-title-small"><span class="o-accent"> </span>MCA<br />2024 -
+                    Now</span>
+                  <p><span>Sandip Foundation</span></p>
+                </div>
+                <a href="https://www.sandipfoundation.org/">
+                  <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                </a>
+              </li>
+              <li>
+                <div>
+                  <span class="o-title-small">BCA<br />2021 - 2024</span>
+                  <p><span>KCES's IMR College</span></p>
+                </div>
+                <a href="https://imr.ac.in/">
+                  <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                </a>
+              </li>
+
+              <div class="c-honors__title" style="margin: 5vh 0; justify-content: center">
+                <h2 class="js-reveal o-title">
+                  <span class="line-parent"><span class="line-child" style="letter-spacing: 1.2px">Ho<span
+                        class="o-accent">n</span>ors</span></span>
+                </h2>
+              </div>
+              <li>
+                <div>
+                  <span class="o-title-small"><span class="o-accent"> </span>Google</span>
+                  <p><span>Google UX Design</span></p>
+                </div>
+                <a href="https://coursera.org/verify/professional-cert/5QAJBG96X03U">
+                  <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                </a>
+              </li>
+              <li>
+                <div>
+                  <span class="o-title-small">Microsoft</span>
+                  <p><span>Microsoft UX Design</span></p>
+                </div>
+                <a href="https://coursera.org/verify/professional-cert/3I5HI135TOI3">
+                  <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                </a>
+              </li>
+              <li>
+                <div>
+                  <span class="o-title-small">Adobe</span>
+                  <p><span>Graphic Design</span></p>
+                </div>
+                <a href="https://coursera.org/verify/L4OEJEYWZ3WZ">
+                  <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                </a>
+              </li>
+              <div class="c-honors__title" style="margin: 5vh 0; justify-content: center">
+                <h2 class="js-reveal o-title">
+                  <span class="line-parent"><span class="line-child" style="letter-spacing: 1.2px">T<span
+                        class="o-accent">oo</span>ls</span></span>
+                </h2>
+              </div>
+              <!-- <li> 
+                  <div>
+                    <span class="o-title-small"><span class="o-accent"> </span>FRONT-END<br />DEV</span>
+                    <p><span>HTML5</span></p>
+                  </div>
+                  <a href="#">
+                    <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                  </a>
+                </li>
+                <li>
+                  <div>
+                    <span class="o-title-small">FRONT-END<br />DEV</span>
+                    <p><span>CSS</span></p>
+                  </div>
+                  <a href="#">
+                    <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                  </a>
+                </li>
+                <li>
+                  <div>
+                    <span class="o-title-small">FRONT-END<br />DEV</span>
+                    <p><span>JavaScript</span></p>
+                  </div>
+                  <a href="#">
+                    <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                  </a>
+                </li>
+                <li>
+                  <div>
+                    <span class="o-title-small">UI/UX<br />DESIGN</span>
+                    <p><span>Figma</span></p>
+                  </div>
+                  <a href="#">
+                    <img src="Assets/Icon/new-tab.737d741b.svg" alt="Visit" />
+                  </a>
+                </li> -->
+            </ul>
+            <!-- TOOLS -->
+            <div class="tools-box" style="margin-top:10px;">
+
+              <h3>I Use</h3>
+
+              <div class="tools">
+
+                <div class="tool"><i data-lucide="layers"></i>Figma</div>
+                <div class="tool"><i data-lucide="box"></i>Framer</div>
+                <div class="tool"><i data-lucide="file-text"></i>Notion</div>
+                <div class="tool"><i data-lucide="image"></i>Photoshop</div>
+                <div class="tool"><i data-lucide="git-branch"></i>Git</div>
+                <div class="tool"><i data-lucide="pen-tool"></i>Adobe XD</div>
+                <div class="tool"><i data-lucide="code"></i>VS Code</div>
+                <div class="tool"><i data-lucide="palette"></i>Canva</div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-scroll-section class="content-wrap">
+        <header>
+          <h2 class="js-reveal o-title fifty-shades">
+            <span class="line-parent"><span class="line-child" style="letter-spacing: 1.2px;font-size: smaller;">50<span
+                  class="o-accent"> Shades
+                </span>of Me</span></span>
+          </h2>
+        </header>
+        <main>
+          <section>
+            <div class="content">
+              <div class="grid">
+                <!-- Layer 1: Outer edges (6 images) -->
+                <div class="layer">
+                  <div>
+                    <img src="https://i1.sndcdn.com/artworks-pkiVCahHRezAGlQC-fveqzw-t500x500.jpg" alt="" />
+                  </div>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/01/Galiyan_%28Ek_Villain%29.jpg" alt="" />
+                  </div>
+                  <div>
+                    <img src="Assets/Gallery/pet.jpg" alt="" />
+                  </div>
+                  <div>
+                    <img src="Assets/Gallery/me2.png" alt="" />
+                  </div>
+                  <div>
+                    <img
+                      src="https://www.tallengestore.com/cdn/shop/products/7381745139892A_0a4aebae-dd7b-4532-8289-cb81561a9ac6.jpg?v=1683929418"
+                      alt="" />
+                  </div>
+                  <div>
+                    <img
+                      src="https://m.media-amazon.com/images/M/MV5BNzc4ZWQ3NmYtODE0Ny00YTQ4LTlkZWItNTBkMGQ0MmUwMmJlXkEyXkFqcGc@._V1_.jpg"
+                      alt="" />
+                  </div>
+                </div>
+                <!-- Layer 2: Inner columns (6 images) -->
+                <div class="layer">
+                  <div>
+                    <img src="https://i.pinimg.com/736x/50/48/f5/5048f5d15a535dc9e2742117cfda59b9.jpg" alt="" />
+                  </div>
+                  <div>
+                    <img src="https://i.pinimg.com/736x/8c/92/fc/8c92fc11c43fb0135040385e9277c018.jpg" alt="" />
+                  </div>
+                  <div>
+                    <img src="Assets/Gallery/cap.png" alt="" />
+                  </div>
+                  <div>
+                    <img src="Assets/Gallery/art.png" alt="" />
+                  </div>
+                  <div>
+                    <img
+                      src="https://m.media-amazon.com/images/S/pv-target-images/b7a372507c1a7cd3ab438d3e6f06a077f21afd827ea3f777ef4ada8b333aaf95.jpg"
+                      alt="" />
+                  </div>
+                  <div>
+                    <img
+                      src="https://m.media-amazon.com/images/M/MV5BMTQzODMxNDU3MF5BMl5BanBnXkFtZTgwMDAzNjMxMjE@._V1_.jpg"
+                      alt="" />
+                  </div>
+                </div>
+                <!-- Layer 3: Center column top and bottom (2 images) -->
+                <div class="layer">
+                  <div>
+                    <img
+                      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhThY29hkc9lO_KeGxjzE4g7zfhZIXUWJ0vs8OwYgOhdRnoqGlWyvID4C87LToo8Ae_qiwO0idjEg84zFd5ZeWqXGVvnh_QhrdW-bS0Gl9usQX72jeQbc-GmjQx0-mewSRILAzYVCU290ZU/s1600/paniyo-sa.jpg"
+                      alt="" />
+                  </div>
+                  <div>
+                    <img
+                      src="https://m.media-amazon.com/images/M/MV5BNjMwYWMxNjYtY2I2NC00OWE0LTg4MmQtMmI5ZGI2NzU4ODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                      alt="" />
+                  </div>
+                </div>
+                <!-- Center scaler image -->
+                <div class="scaler">
+                  <img src="Assets/Gallery/me.jpeg" alt="" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <div data-scroll-section class="c-testimonials">
+
+        <div class="t-header">
+          <span class="t-badge">Testimonial</span>
+          <h1>What Clients Say?</h1>
+          <p>
+            I'm excited to share some of professionals & client testimonials with you.
+          </p>
+        </div>
+
+        <!-- NAV -->
+        <div class="t-nav">
+          <button class="t-arrow" id="prev"><i class="fa fa-arrow-left"></i></button>
+
+          <div class="t-avatars" id="avatarTrack"></div>
+
+          <button class="t-arrow" id="next"><i class="fa fa-arrow-right"></i></button>
+        </div>
+
+        <!-- CARD -->
+        <div class="t-card">
+          <div class="t-card-inner">
+
+            <div class="t-left">
+              <img id="mainAvatar" class="t-main-avatar">
+            </div>
+
+            <div class="t-content">
+              <h3 id="reviewTitle"></h3>
+              <p id="reviewText"></p>
+
+              <div class="t-user">
+                <strong id="reviewName"></strong>
+                <span id="reviewRole"></span>
+              </div>
+            </div>
+
+            <div class="t-stars" id="reviewStars"></div>
+
+          </div>
+        </div>
+
+      </div>
+      <footer data-scroll-section="">
+        <svg id="c-circle" viewbox="0 0 1254 1254" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="627" cy="627" r="627" fill="url(#paint0_radial_3260_3)"></circle>
+          <defs>
+            <radialGradient id="paint0_radial_3260_3" cx="0" cy="0" r="1" gradientunits="userSpaceOnUse"
+              gradienttransform="translate(627) rotate(90) scale(813)">
+              <stop stop-color="#F3F3F3" stop-opacity="0.45"></stop>
+              <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="c-footer">
+          <div class="c-footer__title">
+            <div>
+              <svg class="o-desktop o-ui-arrow" width="64" height="64" viewbox="0 0 64 64" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.10162 3.10156L62.9999 62.9999" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M63 1.00001L63 63L0.999989 63" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div>
+              <h2 class="js-reveal o-title">
+                <span class="line-parent"><span class="line-child">Let's
+                    <span class="o-desktop u-inline">Talk</span></span></span>
+                <span class="line-parent o-mobile"><span class="line-child">Co<span
+                      class="o-accent">nn</span>ect</span></span>
+                <span class="line-parent o-desktop"><span class="line-child">About the Next</span></span>
+                <span class="line-parent o-desktop"><span class="line-child">big thing</span></span>
+              </h2>
+            </div>
+          </div>
+          <div class="c-footer__cta">
+            <div>
+              <a href="mailto:malikalyani0715@gmail.com" data-router-disabled="" class="button button--bestia">
+                <div class="button__bg"></div>
+                <span>Write a Message</span>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" id="contact_btn" data-router-disabled=""
+                class="button button--bestia contact_btn">
+                <div class="button__bg"></div>
+                <span>Discuss Project</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <style>
+          .c-footer__socials img {
+            border-radius: 100%;
+          }
+        </style>
+        <div class="c-footer__socials">
+          <div data-scroll="">
+            <div style="--order: 1">
+              <a href="https://www.behance.net/kalyani07">
+                <div>
+                  <p>Behance</p>
+                  <p>@kalyani07</p>
+                </div>
+                <img src="Assets/Icon/behance.ca83ecae.svg" alt="Behance">
+              </a>
+            </div>
+            <div style="--order: 2">
+              <a href="https://in.linkedin.com/in/dev-kalyani/">
+                <div>
+                  <p>LinkedIn</p>
+                  <p>@dev-kalyani</p>
+                </div>
+                <img src="Assets/Icon/linkedin.jpg" alt="LinkedIn">
+              </a>
+            </div>
+            <div style="--order: 3">
+              <a href="https://github.com/kalyani0704">
+                <div>
+                  <p>Github</p>
+                  <p>@kalyani0704</p>
+                </div>
+                <img src="Assets/Icon/github.jpg" alt="Github">
+              </a>
+            </div>
+            <div style="--order: 4">
+              <a href="https://linktr.ee/dev_kalyani">
+                <div>
+                  <p>Linktree</p>
+                  <p>@dev_kalyani</p>
+                </div>
+                <img src="Assets/Icon/linktree.jpg" alt="Linktree">
+              </a>
+            </div>
+          </div>
+          <div class="c-footer__copy">
+            <p>
+              <span><span class="js-year">2025</span> Kalyani Mali 💓, All
+                rights reserved • </span><span class="c-footer-credit">Credits</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    </div>
+  </main>
+  <div class="c-credits">
+    <div style="--order: 1">
+      <p>Technologies</p>
+      <a href="https://github.com/locomotivemtl/locomotive-scroll">Locomotive Scroll,</a>
+      <a href="https://highway.js.org/">Highway.js,</a>
+      <a href="https://greensock.com/gsap/">GSAP</a>
+    </div>
+    <div style="--order: 2">
+      <p>Fonts</p>
+      <a href="http://collletttivo.it/" class="o-accent">Mazius,</a>
+      <a href="https://www.tinkov.info/">Gilroy</a>
+    </div>
+    <div style="--order: 3">
+      <p>Designed By</p>
+      <a href="https://kalyanimali.in/">Kalyani Mali 💓</a>
+    </div>
+    <div style="--order: 4; cursor: pointer">
+      <img src="Assets/Icon/close.e11d51cb.svg" alt="close" />
+    </div>
+  </div>
+  <div class="c-cate">
+    <img src="cate1.012f66c0.png" alt="can I have your attention?" />
+    <div><button>Yes</button> <button>No</button></div>
+  </div>
+  <div class="c-overlay" id="js-overlay"></div>
+  <div class="c-contact" id="js-contact">
+    <span class="c-error">Please enter a valid Email</span>
+    <div class="c-progress"><span id="js-prog"></span></div>
+    <div class="c-buttons">
+      <div id="js-count" style="opacity: 0">
+        <p><span>1</span> / 7</p>
+      </div>
+      <div class="c-close"><img src="Assets/Icon/close.e11d51cb.svg" alt="Close" /></div>
+    </div>
+    <form name="export" method="POST" id="contact">
+      <div class="c-slider" id="js-slider">
+        <div class="--welcome c-message">
+          <span>🙌</span>
+          <h1 class="js-split">Hi There!</h1>
+          <p class="js-split">
+            Glad to see you here, Would love to know some things about the
+            project.
+          </p>
+          <p class="js-split">Let's Go!</p>
+          <img src="Assets/Icon/ui-arrow-desktop.02091565.svg" alt=">" />
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">May I please have your name?</h2>
+          </div>
+          <div class="c-reply">
+            <div class="s-text" style="--order: 1">
+              <input type="text" name="Name" placeholder="Type your name" />
+            </div>
+          </div>
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">
+              What kind of project would you like me to craft for you?
+            </h2>
+          </div>
+          <div class="c-reply">
+            <div style="--order: 1">
+              <input type="radio" name="Type of work" id="design" value="Design Only" />
+              <label for="design">Web Design Only</label>
+            </div>
+            <div style="--order: 2">
+              <input type="radio" name="Type of work" id="des&dev" value="Design+Dev" />
+              <label for="des&dev">Web Design + Develop</label>
+            </div>
+            <div style="--order: 3">
+              <input type="radio" name="Type of work" id="mob-des" value="Mobile Design" />
+              <label for="mob-des">App Design</label>
+            </div>
+          </div>
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">What budget range do you have in mind?</h2>
+          </div>
+          <div class="c-reply">
+            <div style="--order: 1">
+              <input type="radio" name="Budget" id="range1" value="Less than ₹500" />
+              <label for="range1">Less than ₹500</label>
+            </div>
+            <div style="--order: 2">
+              <input type="radio" name="Budget" id="range2" value="₹500 - ₹1000" />
+              <label for="range2">₹500 - ₹1000</label>
+            </div>
+            <div style="--order: 3">
+              <input type="radio" name="Budget" id="range3" value="₹1000 - ₹1500" />
+              <label for="range3">₹1000 - ₹1500</label>
+            </div>
+            <div style="--order: 4">
+              <input type="radio" name="Budget" id="range4" value="More than ₹2000" />
+              <label for="range4">More than ₹2000</label>
+            </div>
+          </div>
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">
+              Awesome, How should I get in touch with you?
+            </h2>
+          </div>
+          <div class="c-reply">
+            <div class="s-text" style="--order: 1">
+              <input type="email" name="Email" placeholder="Your Email" required />
+            </div>
+          </div>
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">May I ask how did you find me?</h2>
+          </div>
+          <div class="c-reply">
+            <div style="--order: 1">
+              <input type="radio" name="Source" id="awww" value="Github" />
+              <label for="awww">Github</label>
+            </div>
+            <div style="--order: 2">
+              <input type="radio" name="Source" id="insp" value="Twitter" />
+              <label for="insp">Twitter</label>
+            </div>
+            <div style="--order: 3">
+              <input type="radio" name="Source" id="behance" value="LinkedIn" />
+              <label for="behance">LinkedIn</label>
+            </div>
+            <div style="--order: 4">
+              <input type="radio" name="Source" id="other" value="Others" />
+              <label for="other">Others</label>
+            </div>
+          </div>
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">Any additional contact info?</h2>
+          </div>
+          <div class="c-reply">
+            <div class="s-text" style="--order: 1">
+              <input type="text" name="Website" placeholder="Personal or Company Website" />
+            </div>
+            <div class="s-text" style="--order: 2">
+              <input type="tel" name="Phone" placeholder="Phone Number" />
+            </div>
+            <div class="s-text" style="--order: 3">
+              <input type="text" name="Socials" multiple placeholder="Socials(Separate by Comma)" />
+            </div>
+          </div>
+        </div>
+        <div class="c-query">
+          <div class="c-title">
+            <h2 class="js-split">
+              Lastly, Anything else you would like to mention?
+            </h2>
+          </div>
+          <div class="c-reply">
+            <div class="s-text s-text-area" style="--order: 1">
+              <textarea name="Message" rows="5" placeholder="More details about your project."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="--welcome c-message">
+          <span>👌</span>
+          <h1 class="js-split">Thank You!</h1>
+          <p class="js-split">
+            Your response has been recorded, I will get back to you as soon as
+            possible.
+          </p>
+          <p class="js-split">Have a nice day!</p>
+          <img src="Assets/Icon/ui-arrow-desktop.02091565.svg" alt=">" />
+        </div>
+      </div>
+    </form>
+    <div class="c-buttons">
+      <div class="c-back" id="js-back" style="visibility: hidden; opacity: 0">
+        <img src="Assets/Icon/back.62af88e3.svg" alt="Back" />
+      </div>
+      <div class="c-swap">
+        <div class="c-skip" id="js-skip">
+          <p>Skip</p>
+        </div>
+        <button id="js-submit" form="contact" type="submit">
+          Send Message
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- INIT ICONS -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script>
+    document.querySelectorAll(".accordion-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        content.style.display =
+          content.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    function copyCode(button) {
+      const code = button.previousElementSibling.innerText;
+      navigator.clipboard.writeText(code);
+
+      button.innerText = "Copied!";
+      setTimeout(() => (button.innerText = "Copy"), 1500);
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+  <script src="playbook.9fb05f6e.js"></script>
+</body>
+
+</html>
