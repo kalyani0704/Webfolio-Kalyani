@@ -21,4 +21,3 @@ User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://kalyanimali.in/sitemap.xml
-Sitemap: https://kalyanimali.in/image-sitemap.xml
